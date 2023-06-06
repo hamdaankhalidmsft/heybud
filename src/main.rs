@@ -45,7 +45,10 @@ fn parse_args(args: &Vec<String>) -> Result<Cmd, String> {
 
 fn show_message(message: &String, minutes: u64) {
     thread::sleep(Duration::from_secs(minutes * 60));
-    let _ = msgbox::create("Hey bud!", message.as_str(), msgbox::IconType::Info).unwrap();
+    match msgbox::create("Hey bud!", message.as_str(), msgbox::IconType::Info) {
+        Err(_) => {},
+        Ok(_) => {},
+    };
 }
 
 fn enqueue_reminder(message: &String, minutes: u64) {
