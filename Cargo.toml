@@ -1,0 +1,13 @@
+[package]
+name = "heybud"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["winuser"] }
+
+[dependencies]
+msgbox = "0.7.0"
+
