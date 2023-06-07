@@ -7,6 +7,11 @@ I wrote this little CLI called heybud that lets you create reminders that pop up
 Also good excuse to code something quick in rust.
 
 ## How to install
+
+### Download Binary
+- Download precompiled binary and add to path from Actions tab.
+
+### Build from Source Code
 - Pull repo
 - cargo build --release
 - cargo install --path .
