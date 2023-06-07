@@ -1,8 +1,8 @@
 extern crate msgbox;
 use std::env;
+use std::process::Command;
 use std::thread;
 use std::time::Duration;
-use std::process::Command;
 
 // CLI tool to schedule message reminders
 
@@ -21,7 +21,7 @@ fn main() {
         },
         Err(_) => {
             eprintln!("Hey bud, can you please follow the friggin usage pattern -> `heybud 'my reminder mesage' <number>`");
-        },
+        }
     }
 }
 
@@ -34,9 +34,12 @@ fn parse_args(args: &Vec<String>) -> Result<Cmd, String> {
     if args.len() != 3 && args.len() != 4 {
         return Err(String::from("incorrect use"));
     }
-    
+
     if args.len() == 4 && args[1] == "--alert" {
-        Ok(Cmd::ShowMessage(args[2].clone(), args[3].parse::<u64>().expect("invalid usage")))
+        Ok(Cmd::ShowMessage(
+            args[2].clone(),
+            args[3].parse::<u64>().expect("invalid usage"),
+        ))
     } else {
         let remind_in_mins = args[2].parse::<u64>().expect("invalid usage");
         Ok(Cmd::EnqueueReminder(args[1].clone(), remind_in_mins))
@@ -46,8 +49,8 @@ fn parse_args(args: &Vec<String>) -> Result<Cmd, String> {
 fn show_message(message: &String, minutes: u64) {
     thread::sleep(Duration::from_secs(minutes * 60));
     match msgbox::create("Hey bud!", message.as_str(), msgbox::IconType::Info) {
-        Err(_) => {},
-        Ok(_) => {},
+        Err(_) => {}
+        Ok(_) => {}
     };
 }
 
