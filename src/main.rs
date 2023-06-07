@@ -20,7 +20,7 @@ fn main() {
             Cmd::ShowMessage(msg, sleep_for) => show_message(&msg, sleep_for),
         },
         Err(_) => {
-            eprintln!("Hey bud, can you please follow the friggin usage pattern -> `heybud 'my reminder mesage' <number>`");
+            eprintln!("Hey bud, can you please follow the friggin usage pattern: `heybud 'my reminder mesage' <number>`");
         }
     }
 }
