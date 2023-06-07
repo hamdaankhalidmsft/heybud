@@ -4,7 +4,6 @@ use std::process::Command;
 use std::thread;
 use std::time::Duration;
 
-// CLI tool to schedule message reminders
 
 /*
  * If invoked as:
