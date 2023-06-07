@@ -21,3 +21,5 @@ Example:
 ```
 heybud 'whatever reminder you want' 2
 ```
+
+![Reminder](./example_reminder.jpg)
