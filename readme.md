@@ -29,3 +29,4 @@ heybud 'whatever reminder you want' 2
 
 ## Example Reminder
 ![Reminder](./example_reminder.jpg)
+
