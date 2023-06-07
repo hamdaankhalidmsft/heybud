@@ -66,3 +66,5 @@ fn enqueue_reminder(message: &String, minutes: u64) {
         Err(e) => println!("Hey bud, I'm sorry I ran into an error: {:?}", e),
     };
 }
+
+// todo tests
